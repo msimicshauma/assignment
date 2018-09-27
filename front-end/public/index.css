@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'K2D', sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.App .users {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .users .card {
+  width: 200px;
+  margin: 15px;
+  padding: 10px;
+
+  transition: 0.1s linear;
+  background-color: #eee;
+  color: #2e3131;
+  
+  cursor: pointer;
+}
+
+.App .users .card:hover {
+  transition: 0.1s linear;
+  box-shadow: 0 0 4px 4px #ddd;
+}
+
+.App .users .card .property {
+  font-weight: bold;
+  color: #2ecc71;
+}

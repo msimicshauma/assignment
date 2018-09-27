@@ -1,0 +1,16 @@
+{
+  "name": "internship",
+  "version": "1.0.0",
+  "description": "friends function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Milos Simic",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17"
+  }
+}
