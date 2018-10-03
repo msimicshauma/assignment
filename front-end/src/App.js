@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Users from './components/allUsers';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Users from './components/AllUsers';
+import User from './components/User';
 
 class App extends Component {
   state = {
@@ -16,22 +18,20 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        return data;
-      }).then(state => {
         this.setState({
-          users: state
+          users: data
         });
-
-        console.log('STATE');
-        console.log(this.state);
       });
   }
 
   render() {
     return (
-      <div className="App">
-        <Users users={this.state.users} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path='/' render={() => <Users users={this.state.users} />} />
+          <Route path='/user/:user_id' component={User} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

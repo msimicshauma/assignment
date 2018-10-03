@@ -2,10 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes/api');
 
-var app = express();
-mongoose.connect('mongodb://localhost/userBase', { useNewUrlParser: true });
+const app = express();
 
-//app.use(express.static('public'));
+mongoose.connect('mongodb://msimic:pus1kitu@ds115523.mlab.com:15523/userbase', { useNewUrlParser: true });
+mongoose.connection.once('open', () => {
+  console.log('connected to database...');
+});
+
 app.use('/api', routes);
 
 app.listen(4000, () => {

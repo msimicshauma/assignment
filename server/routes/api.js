@@ -19,6 +19,3 @@ router.get('/users/:id', function(req, res) {
 });
 
 module.exports = router;
-
-//1. IMPORT USERS TO DATABASE --DONE
-//2. GET USERS FROM DATABASE (USING USER MODEL) --DONE
