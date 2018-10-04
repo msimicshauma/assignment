@@ -6,16 +6,25 @@ const Suggestions = ({ allUsers, userFriends, currentId }) => {
   if(allUsers.length > 1) {
     currentId = parseInt(currentId);
     var match = 0;
+    var counter = 0;
 
     for(var k = 0; k < allUsers.length; k++) {
       if(allUsers[k].id !== currentId) {
-        for(var i = 0; i < userFriends.length; i++)
-          for(var j = 0; j < allUsers[k].friends.length; j++)
-            if(userFriends[i] === allUsers[k].friends[j]) match++;
+        for(var i = 0; i < userFriends.length; i++) {
+          for(var j = 0; j < allUsers[k].friends.length; j++) {
+            if(currentId === allUsers[k].friends[j]) counter++;
+          }
+
+          if(counter === 0) {
+            for(var z = 0; z < allUsers[k].friends.length; z++)
+              if(userFriends[i] === allUsers[k].friends[z]) match++;
+          }
+        }
       }
 
       if(match >= 2) suggestions.push(allUsers[k]);
       match = 0;
+      counter = 0;
     }
   }
 
